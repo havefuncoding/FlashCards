@@ -22,5 +22,6 @@
 
 #### References
 * [Passing in arguments into C Program](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-* [links](http://wikipedia.org)
-* [links](http://wikipedia.org) 
+* [Find index of character in a string](https://stackoverflow.com/a/3217634)
+* [Iterate over string in C](https://stackoverflow.com/a/3213855) 
+* [Fgets to read line by line in files](https://stackoverflow.com/a/21180478)

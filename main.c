@@ -11,49 +11,50 @@ int main(int argc, char *argv[])
     // ---- CLI Arg filepath part
     char filepath[125];
 
-    if(argc == 2) {
-        printf("\nArgument: %s\n", argv[1]);
+    if(argc == 2) 
         strcpy(filepath, argv[1]);
-    } else if (argc > 2) {
+    else if (argc > 2) 
         printf("\nToo many arguments!\n");
-    } else {
-        printf("\nNo argument supplied.\n");
+    else 
         strcpy(filepath, STUDY_FILE);
-    }
 
     printf("\nFilepath to work with: %s\n", filepath);    
 
 
     // ---- Colon delimeter for Q & A part
+    
     FILE *file;
-    char *question = malloc(MAX_QUESTION_LEN * sizeof(char));
-    char *answer = malloc(MAX_ANSWER_LEN *sizeof(char));
-    char temp;
-    int i = 0;
+    char buf[1000];
 
-    file = fopen(filepath, "r");
+    file = fopen(STUDY_FILE, "r");
+    if (!file)
+        return 1;
 
-    while ((temp = fgetc(file)) != EOF)
+    while (fgets(buf, 1000, file) != NULL) 
     {
-        if (temp == ':')
-            break;
-        question[i++] = temp;
+        printf("Line: %s\n", buf);
+        char *question = malloc(MAX_QUESTION_LEN * sizeof(char));
+        char *answer = malloc(MAX_ANSWER_LEN *sizeof(char));
+        char temp;
+        int i;
+
+        char *line = buf;
+        char *colon;
+        int index;
+        colon = strchr(line, ':');
+        index = (int) (colon - line);
+
+        for (i=0; i<index; i++)
+            question[i] = buf[i];
+        question[++i] = '\0';
+
+        for (i=index; i<strlen(buf); i++)
+            answer[i-index] = buf[i];
+        answer[++i] = '\0';
+
+        printf("Q %s and A %s", question, answer);
+        
     }
-    question[++i] = '\0';
-
-    i = 0;
-    while ((temp = fgetc(file)) != EOF)
-    {
-        if (temp == '\n')
-            break;
-        answer[i++] = temp;
-    }
-    answer[++i] = '\0';
-
-    fclose(file);
-
-    printf ("Question: %s\n", question);
-    printf ("Answer: %s\n", answer);
 
 
     return 0;
