@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include "Config.h"
 
-
+// Forward declarations
+static void run_program(FILE* file);
+static int ask_to_replay();
 
 int main(int argc, char *argv[])
 {
 
-    // ---- CLI Arg filepath part
+    // Sets filepath based off argument if one is passed in
+    // otherwise uses default filepath in Config.h
     char filepath[125];
 
     if(argc == 2) 
@@ -18,22 +21,31 @@ int main(int argc, char *argv[])
     else 
         strcpy(filepath, STUDY_FILE);
 
-    printf("\nFilepath to work with: %s\n", filepath);    
-
-
-    // ---- Colon delimeter for Q & A part
-    
+    // Checks if file is valid
+    // Exits if file is not valid
+    // Runs program if valid
     FILE *file;
-    char buf[1000];
-
     file = fopen(STUDY_FILE, "r");
     if (!file)
         return 1;
+    else
+        run_program(file);
 
-    while (fgets(buf, 1000, file) != NULL) 
+    return 0;
+}
+
+// Runs program which prints qestion and answer lines from a file
+// Inputs
+// file: file object
+void run_program(FILE* file)
+{
+    int replay;
+    char buf[MAX_LEN*2];
+
+    while (fgets(buf, MAX_LEN, file) != NULL) 
     {
-        char *question = malloc(MAX_QUESTION_LEN * sizeof(char));
-        char *answer = malloc(MAX_ANSWER_LEN *sizeof(char));
+        char *question = malloc(MAX_LEN * sizeof(char));
+        char *answer = malloc(MAX_LEN *sizeof(char));
         char temp;
         int i;
 
@@ -45,18 +57,26 @@ int main(int argc, char *argv[])
 
         for (i=0; i<index; i++)
             question[i] = buf[i];
-        question[++i] = '\0';
+        question[++i] = '\0'; // add to end string
 
         for (i=index; i<strlen(buf); i++)
             answer[i-index] = buf[i];
-        answer[++i] = '\0';
+        answer[++i] = '\0'; // add to end string
 
-        printf("Question: %s\nPress ENTER for answer...", question);
+        printf("Question: %s\t[press ENTER to continue]", question);
         getchar();
-        printf("Answer: %s\nPress ENTER for next question...", answer);
+        printf("Answer: %s [press ENTER to continue]", answer);
         getchar();
     }
 
+    ask_to_replay();
+}
 
-    return 0;
+
+// Asks if user wants to play again
+int ask_to_replay()
+{
+    int replay;
+    printf("Would you like to continue? [Y or N]\n");
+    return 0;    
 }

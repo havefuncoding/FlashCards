@@ -26,4 +26,6 @@
 * [Iterate over string in C](https://stackoverflow.com/a/3213855) 
 * [Fgets to read line by line in files](https://stackoverflow.com/a/21180478)
 * [Putchar() to wait for ENTER keypress to continue](https://stackoverflow.com/a/18801616)
-
+* [Passing file pointer to a function](https://stackoverflow.com/a/33378074)
+* [Scanf() on single char](https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c)
+* 
