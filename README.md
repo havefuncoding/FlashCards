@@ -25,3 +25,5 @@
 * [Find index of character in a string](https://stackoverflow.com/a/3217634)
 * [Iterate over string in C](https://stackoverflow.com/a/3213855) 
 * [Fgets to read line by line in files](https://stackoverflow.com/a/21180478)
+* [Putchar() to wait for ENTER keypress to continue](https://stackoverflow.com/a/18801616)
+

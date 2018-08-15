@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 
     while (fgets(buf, 1000, file) != NULL) 
     {
-        printf("Line: %s\n", buf);
         char *question = malloc(MAX_QUESTION_LEN * sizeof(char));
         char *answer = malloc(MAX_ANSWER_LEN *sizeof(char));
         char temp;
@@ -52,8 +51,10 @@ int main(int argc, char *argv[])
             answer[i-index] = buf[i];
         answer[++i] = '\0';
 
-        printf("Q %s and A %s", question, answer);
-        
+        printf("Question: %s\nPress ENTER for answer...", question);
+        getchar();
+        printf("Answer: %s\nPress ENTER for next question...", answer);
+        getchar();
     }
 
 
