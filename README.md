@@ -21,6 +21,6 @@
 
 
 #### References
-* [links](http://wikipedia.org)
+* [Passing in arguments into C Program](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
 * [links](http://wikipedia.org)
 * [links](http://wikipedia.org) 
