@@ -28,4 +28,9 @@
 * [Putchar() to wait for ENTER keypress to continue](https://stackoverflow.com/a/18801616)
 * [Passing file pointer to a function](https://stackoverflow.com/a/33378074)
 * [Scanf() on single char](https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c)
-* 
+* [Tolower() in ctype.h](https://stackoverflow.com/a/15708817)
+* [Scanf() single char and assign to variable](https://stackoverflow.com/a/13543113)
+* [Case switch statement syntax](https://www.programiz.com/c-programming/c-switch-case-statement)
+* [Read each line in file into array](https://stackoverflow.com/questions/19173442/reading-each-line-of-file-into-array)
+
+ 
