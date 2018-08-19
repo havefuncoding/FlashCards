@@ -1,0 +1,32 @@
+auto:       defines a local variable as having a local lifetime
+break:      passes control out of the programming construct
+case:       branch control
+char:       basic data type
+const:      defines a value that cannot be modified
+continue:   passes control to loop's beginning
+default:    branch control
+do:         do while loop
+double:     floating-point data type
+else:       conditional statement
+enum:       defines a group of constants of type int
+extern:     indicates an identifier as defined elsewhere
+float:      floating-point data type
+for:        for loop
+goto:       transfers program control unconditionally
+if:         conditional statement
+int:        basic data type
+long:       type modifier
+register:   stores the declared variable in a CPU register
+return:     exits the function
+short:      type modifier
+signed:     type modifier
+sizeof:     returns expressions or type size
+static:     preserves variables value after its scope ends
+struct:     groups variables into a single record
+switch:     branch control
+typedef:    creates a new type
+union:      groups variables that occupy the same storage space
+unsigned:   type modifier
+void:       empty data type
+volatile:   allows a variable to be changed by a background routine
+while:      repeats program execution while the condition is true

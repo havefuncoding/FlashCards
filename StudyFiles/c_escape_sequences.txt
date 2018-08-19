@@ -1,0 +1,6 @@
+\n: creates a new line
+\t: moves the cursor to the next tab
+\r: moves the cursor to the beginning of the current line
+\\: inserts a backslash
+\": inserts a double quote
+\': insers a single quote
